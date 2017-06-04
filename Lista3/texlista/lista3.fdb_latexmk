@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1496581778 "lista3.tex" "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.pdf" "lista3" 1496581779
+["pdflatex"] 1496584404 "lista3.tex" "/home/carlos/Documents/CM116/Lista3/texlista/lista3.pdf" "lista3" 1496584420
   "/etc/texmf/web2c/texmf.cnf" 1494036212 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.aux" 1496581778 1213 2f6b68c27285e45ddf9354dd9032e51e ""
+  "/home/carlos/Documents/CM116/Lista3/texlista/lista3.aux" 1496584405 1213 2f6b68c27285e45ddf9354dd9032e51e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -227,13 +227,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1458942643 31351 b32c45dce4a01cb7b53ed90c546614ca ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1494036445 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1494036455 3853789 35f32dc97832c28a499530b5090eff2c ""
-  "lista3.aux" 1496581778 1213 2f6b68c27285e45ddf9354dd9032e51e ""
-  "lista3.out" 1496581778 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "lista3.tex" 1496581778 36858 29ab954db3752c68345672fac8429d9d ""
+  "lista3.aux" 1496584405 1213 2f6b68c27285e45ddf9354dd9032e51e ""
+  "lista3.out" 1496584404 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "lista3.tex" 1496584404 36863 6321bd52a061b1ec67945f6f21a0bda1 ""
   (generated)
-  "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.log"
   "lista3.out"
-  "lista3.log"
-  "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.pdf"
-  "lista3.pdf"
   "lista3.aux"
+  "/home/carlos/Documents/CM116/Lista3/texlista/lista3.pdf"
+  "lista3.pdf"
+  "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.pdf"
+  "/home/carlos/Documents/CM116/Lista3/texlista/lista3.log"
+  "lista3.log"
+  "/home/carlos/Desktop/CM116/Lista3/texlista/lista3.log"
