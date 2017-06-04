@@ -1,0 +1,1047 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage{amsthm}
+%\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{latexsym}
+\usepackage{makeidx}
+\usepackage{setspace}
+\usepackage[matrix,arrow,arc,all]{xy}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage{booktabs}
+
+
+%\usepackage[brazil,portuges]{babel}
+%\usepackage[ansinew]{inputenc}
+%\usepackage{graphics,graphicx}
+%\renewcommand{\baselinestretch}{1.2}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[normalem]{ulem} % sublinhado
+\usepackage{verbatim} % para os comenterios em blocos \begin{comment}
+\geometry{top=30mm,bottom=30mm,left=30mm,right=30mm}
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+    colorlinks=true,               % false: boxed links; true: colored links
+        linkcolor=black,            % color of internal links
+        citecolor=blue,            % color of links to bibliography
+%        filecolor=magenta,         % color of file links
+    urlcolor=blue,
+    }
+\usepackage[matrix,arrow,arc,all]{xy}
+\usepackage[lastexercise]{exercise}
+
+
+%--------------------------------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------------------
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\renewcommand{\listalgorithmname}{Lista de algoritmos}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicdo}{\textbf{faça}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+
+%-------------------------------------------------------------------------------------------
+
+\usepackage{amstext}
+%\usepackage{wrapfig}
+\usepackage{multicol,colordvi,epsfig,float,color}
+\usepackage{tikz}
+\usepackage[matrix,arrow,arc,all]{xy}
+\usepackage{textcomp}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usetikzlibrary{matrix,decorations.pathreplacing,calc}
+
+%--------------------------------------------------------------------------------------------
+
+%\setlength{\topmargin}{-0.4in}\setlength{\topskip}{0.3in}    % between header and text
+%\setlength{\textheight}{9.5in} % height of main text
+%\setlength{\textwidth}{6.25in}    % width of text
+%\setlength{\oddsidemargin}{0.2in} % odd page left margin
+%\setlength{\evensidemargin}{0.2in} % even page left margin
+%\setlength{\parindent}{1cm}
+
+%--------------------------------------------------------------------------------------------
+
+%\newenvironment{AMS}{\small\it AMS subject classification:}{}
+%\newenvironment{keywords}{\small\it Key words:}{}
+%\newenvironment{proof}{Proof. }
+
+\newenvironment{solution}
+  {\begin{proof}[Solução]}
+  {\end{proof}}
+\newtheorem{theorem}{\sc Teorema}[section]
+\newtheorem{teo}[theorem]{\scshape Teorema}
+\newtheorem{lema}[theorem]{\scshape Lema}
+\newtheorem{cor}[theorem]{\scshape Corol\'ario}
+\newtheorem{propo}[theorem]{\scshape Proposi\c{c}\~ao}
+\newtheorem{definicao}{\scshape Defini\c{c}\~ao}[section]
+\newtheorem{ex}{\scshape Exemplo}[section]
+\newtheorem{obs}{Observação}[section]
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator{\Ker}{Ker}
+\usepackage{enumitem}
+\setenumerate[0]{label=(\alph*)}
+\DeclareMathOperator{\posto}{posto}
+\newcommand{\im}[1]{\textnormal{Im}(#1)}
+\newcommand{\spann}[1]{\textnormal{span}\{#1\}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclareMathOperator{\argmin}{argmin}
+
+
+%matrix environment for side brackets
+\pgfkeys{tikz/mymatrixenv/.style={decoration=brace,every left delimiter/.style={xshift=3pt},every right delimiter/.style={xshift=-3pt}}}
+\pgfkeys{tikz/mymatrix/.style={matrix of math nodes,left delimiter=[,right delimiter={]},inner sep=2pt,column sep=1em,row sep=0.5em,nodes={inner sep=0pt}}}
+\pgfkeys{tikz/mymatrixbrace/.style={decorate,thick}}
+\newcommand\mymatrixbraceoffseth{0.5em}
+\newcommand\mymatrixbraceoffsetv{0.2em}
+
+% Now the commands to produce the braces. (I'll explain below how to use them.)
+\newcommand*\mymatrixbraceright[4][m]{
+    \draw[mymatrixbrace] ($(#1.north west)!(#1-#3-1.south west)!(#1.south west)-(\mymatrixbraceoffseth,0)$)
+        -- node[left=2pt] {#4}
+        ($(#1.north west)!(#1-#2-1.north west)!(#1.south west)-(\mymatrixbraceoffseth,0)$);
+}
+\newcommand*\mymatrixbraceleft[4][m]{
+    \draw[mymatrixbrace] ($(#1.north east)!(#1-#2-1.north east)!(#1.south east)+(\mymatrixbraceoffseth,0)$)
+        -- node[right=2pt] {#4}
+        ($(#1.north east)!(#1-#3-1.south east)!(#1.south east)+(\mymatrixbraceoffseth,0)$);
+}
+\newcommand*\mymatrixbracetop[4][m]{
+    \draw[mymatrixbrace] ($(#1.north west)!(#1-1-#2.north west)!(#1.north east)+(0,\mymatrixbraceoffsetv)$)
+        -- node[above=2pt] {#4}
+        ($(#1.north west)!(#1-1-#3.north east)!(#1.north east)+(0,\mymatrixbraceoffsetv)$);
+}
+\newcommand*\mymatrixbracebottom[4][m]{
+    \draw[mymatrixbrace] ($(#1.south west)!(#1-1-#3.south east)!(#1.south east)-(0,\mymatrixbraceoffsetv)$)
+        -- node[below=2pt] {#4}
+        ($(#1.south west)!(#1-1-#2.south west)!(#1.south east)-(0,\mymatrixbraceoffsetv)$);
+}
+
+\begin{document}
+
+  \begin{titlepage}
+   \vfill
+      \begin{center}
+          {\large \textbf{UNIVERSIDADE FEDERAL DO PARANÁ}} \\[2.5cm]
+
+          {\large \textbf{Carlos Ronchi}}\\[4cm]
+
+
+          {\Large Lista 3 - CM116}\\[4cm]
+
+          \hspace{.45\textwidth} %posiciona a minipage
+          \begin{minipage}{.5\textwidth}
+              \large Lista de exercícios para a disciplina de tópicos em matemática aplicada I.\\[1cm]
+              Professor Dr. Geovani Grapiglia.
+          \end{minipage}
+          \vfill
+
+          \vspace{2cm}
+
+          \large \textbf{Curitiba}
+
+          \large \textbf{Junho de 2017}
+      \end{center}
+  \end{titlepage}
+
+  \begin{solution}{(Exercício 1)}
+
+    Para este exercício vamos usar os seguintes lemas.
+
+    \begin{lema}\label{lem:1}
+      Seja $A \in \mathbb{R}^{m\times n}$, então $\Ker(A^TA) = \Ker(A)$.
+    \end{lema}
+    \begin{proof}
+
+        Seja $x\in \Ker(A)$, então $A^TAx = A^T0 = 0$. Portanto, $x\in \Ker(A^TA)$.
+
+        Agora, seja $x \in \Ker(A^TA)$, então $A^TAx = 0$. Multiplicando por $x^T$ em
+        ambos os lados, temos que
+        \begin{equation*}
+          \norm{Ax} = 0.
+        \end{equation*}
+        Portanto, $Ax = 0$ e assim $x \in \Ker(A)$. Concluimos então que $\Ker(A^TA) = \Ker(A)$.
+    \end{proof}
+
+    \begin{lema}\label{lem:2}
+      Seja $A \in \mathbb{R}^{m \times n}$, então $A^TA$ possui autovalores não-negativos.
+    \end{lema}
+    \begin{proof}
+      Seja $v$ um autovetor associado a $\lambda$ da matriz $A^TA$, então
+      \begin{equation*}
+        A^TAv = \lambda v \rightarrow v^TA^TAv = \lambda v^Tv.
+      \end{equation*}
+      Como $A^TA$ é uma matriz semi definida positiva, temos que
+      \begin{equation*}
+        \lambda v^Tv \geq 0.
+      \end{equation*}
+      Além disso, como $v$ é um autovetor, $v^Tv > 0$, portanto,
+      \begin{equation*}
+        \lambda \geq 0.
+      \end{equation*}
+    \end{proof}
+
+    Vamos agora provar o SVD. Seja $A\in \mathbb{R}^{m\times n}$ uma matriz qualquer e suponha
+    que $m \geq n$. Seja a matriz $A^TA \in \mathbb{R}^{n \times n}$ e
+    sejam $x_1, \dots, x_n$ autovetores ortonormais e $\lambda_1,\dots,\lambda_n$ os seus
+    respectivos autovalores. Vamos ordenar os autovalores de forma que
+    $\lambda_1 \geq \dots \lambda_n$. E seja $r$ tal que
+    \begin{equation*}
+      \lambda_1 \geq \dots \geq \lambda_r > \lambda_{r+1} = \dots = \lambda_n.
+    \end{equation*}
+    Defina agora os vetores
+    \begin{equation*}
+      q_i = \frac{1}{\sqrt{\lambda_i}}Ax_i, \quad \textnormal{para $i\leq r$},
+    \end{equation*}
+    e chame de $\sigma_i = \sqrt{\lambda_i}$, para todo $i=1,\dots,n$.
+
+    Observe que $q_i^Tq_j = 0$ para todo $i \neq j$ e $q_i^Tq_i = 1$. Portanto, vamos
+    completar $\{q_1,\dots,q_r\}$ de forma a obter uma base $\{q_1,\dots,q_r,q_{r+1},\dots,q_m\}$
+    de $\mathbb{R}^m$. Sejam agora as matrizes
+
+    \begin{equation*}
+      U = \begin{pmatrix}
+          \vert & & \vert \\
+          q_1 & \dots & q_m \\
+          \vert & & \vert
+        \end{pmatrix},
+        \quad \quad
+      V = \begin{pmatrix}
+              \vert & & \vert \\
+              x_1 & \dots & x_n \\
+              \vert & & \vert
+            \end{pmatrix}.
+    \end{equation*}
+
+    Note que $x_j \in \Ker(A^TA)$ para $j > r$, pois o autovalor associado a $x_j$ é $0$. Pelo
+    Lema \ref{lem:1}, $Ax_j = 0$. Portanto,
+    \begin{equation*}
+      (U^TAV)_{ij} = q_i^TAx_j =
+      \left\{
+        \begin{split}
+          &\frac{1}{\sigma_i} x_iA^TAx_j && \textnormal{se } j \leq r \\
+          &0 && \textnormal{se } j > r
+        \end{split}
+      \right.
+      =
+      \left\{
+        \begin{split}
+          &\sigma_i\delta_{ij} && \textnormal{se } j \leq r \\
+          &0 && \textnormal{se } j > r
+        \end{split}
+      \right.
+      ,
+    \end{equation*}
+
+    pois
+    \begin{equation*}
+      \frac{1}{\sigma_i}x_i^TA^TAx_j = \frac{\lambda_j}{\sigma_i}x_i^Tx_j = \sigma_i\delta_{ij}.
+    \end{equation*}
+    Portanto, $U^TAV$ é dada por
+    \begin{equation*}
+      \begin{tikzpicture}[mymatrixenv]
+        \matrix[mymatrix] (m)  {
+            \sigma_1 & 0 & \cdots & 0 \\
+            0 & \sigma_2 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & \sigma_n \\
+            0 & 0 & \cdots & 0 \\
+            0 & 0 & \cdots & 0 \\
+        };
+        \mymatrixbraceright{1}{4}{n}
+        \mymatrixbracetop{1}{4}{n}
+        \mymatrixbraceleft{5}{6}{m-n}
+      \end{tikzpicture}
+    \end{equation*}
+
+    Denotando por $\Sigma$ a matriz acima, temos que
+
+    \begin{equation*}
+      A = U\Sigma V^T
+    \end{equation*}
+
+    Seja agora $m<n$. Considere a matriz simétrica $AA^T$. Do memso modo que a anrerior,
+    temos que seus autovalores são todos não negativos. Sejam $v_1,\dots,v_m$ os autovalores
+    ortonormais associados a $\lambda_1, \dots, \lambda_m$ autovalores. Ordene
+    $\lambda_1 \geq \dots \geq \lambda_m$. Denote por $\sigma_i = \sqrt{\lambda_i}$ para
+    todo $i=1,\dots,m$. Seja $r$ tal que
+    \begin{equation*}
+      \lambda_1 \geq \dots \geq \lambda_r > \lambda_{r+1} = \dots = \lambda_m.
+    \end{equation*}
+    Para $i=1,\dots,r$, denote por
+    \begin{equation*}
+      q_i = \frac{1}{\sigma_i}A^Tv_i.
+    \end{equation*}
+    Note que os $q_i$'s são ortonormais. Completando a base e utilizando o processo
+    de ortogonalização de Gram-Schimdt, temos uma base $\{q_1,\dots,q_r,q_{r+1}, \dots, q_n\}$
+    ortornormal de $\mathbb{R}^n$. Sejam agora as matrizes
+
+    \begin{equation*}
+      U = \begin{pmatrix}
+          \vert & & \vert \\
+          v_1 & \dots & v_m \\
+          \vert & & \vert
+        \end{pmatrix},
+        \quad \quad
+      V = \begin{pmatrix}
+              \vert & & \vert \\
+              q_1 & \dots & q_n \\
+              \vert & & \vert
+            \end{pmatrix}.
+    \end{equation*}
+
+    Além disso, de modo análogo ao Lema \ref{lem:1}, temos que $\Ker(AA^T) = \Ker(A^T)$,
+    basta substituir $A$ por $A^T$. Portanto,
+
+    \begin{equation*}
+      (U^TAV)_{ij} = v_i^TAq_j =
+      \left\{
+        \begin{split}
+          &\frac{1}{\sigma_i} v_iAA^Tv_j && \textnormal{se } j \leq r \\
+          &0 && \textnormal{se } j > r
+        \end{split}
+      \right.
+      =
+      \left\{
+        \begin{split}
+          &\sigma_j\delta_{ij} && \textnormal{se } j \leq r \\
+          &0 && \textnormal{se } j > r
+        \end{split}
+      \right.
+      ,
+    \end{equation*}
+
+    pois $v_i \in \Ker(A^T)$ e
+    \begin{equation*}
+      \frac{1}{\sigma_j}v_i^TAA^Tv_j = \frac{\lambda_i}{\sigma_j}v_i^Tv_j = \sigma_j\delta_{ij}.
+    \end{equation*}
+
+    Portanto, a matriz $U^TAV$ é dada por
+
+    \begin{equation*}
+      \begin{tikzpicture}[mymatrixenv]
+        \matrix[mymatrix] (m)  {
+            \sigma_1 & 0 & \cdots & 0 & 0 & \cdots & 0\\
+            0 & \sigma_2 & \cdots & 0 & 0 & \cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots & 0 & \cdots & 0\\
+            0 & 0 & \cdots & \sigma_m & 0 & \cdots & 0\\
+        };
+        \mymatrixbraceright{1}{4}{m}
+        \mymatrixbracetop{1}{4}{m}
+        \mymatrixbracetop{5}{7}{n-m}
+      \end{tikzpicture}.
+    \end{equation*}
+
+
+  \end{solution}
+
+
+  \begin{solution}{(Exercício 2)}
+
+    Suponha $m<n$, então
+    \begin{equation*}
+      \begin{split}
+      Ax &= U\Sigma V^T = \begin{pmatrix}
+          \vert & & \vert \\
+          u_1 & \dots & u_m \\
+          \vert & & \vert
+        \end{pmatrix}
+        \begin{pmatrix}
+          \sigma_1 & & &  &0 \\
+          &\sigma_2 & & & 0 \\
+          & & \ddots & & 0 \\
+          & & &\sigma_m & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \-- & v_1^T & \-- \\
+             & \vdots &  \\
+            \-- & v_n^T & \--
+        \end{pmatrix}
+        \begin{pmatrix}
+          x_1 \\
+          x_2 \\
+          \vdots \\
+          x_n
+        \end{pmatrix} \\
+        &= \begin{pmatrix}
+            \vert & & \vert \\
+            u_1 & \dots & u_m \\
+            \vert & & \vert
+          \end{pmatrix}
+          \begin{pmatrix}
+            \sigma_1v_1^Tx \\
+            \vdots \\
+            \sigma_mv_m^Tx
+          \end{pmatrix}
+      \end{split}
+    \end{equation*}
+
+    Seja agora $x = v_i$, então
+    \begin{equation*}
+      \begin{split}
+        Av_i &= \begin{pmatrix}
+            \vert & & \vert \\
+            u_1 & \dots & u_m \\
+            \vert & & \vert
+          \end{pmatrix}
+          \begin{pmatrix}
+            \sigma_1v_1^Tv_i \\
+            \vdots \\
+            \sigma_mv_m^Tv_i
+          \end{pmatrix}  \\
+          &= \begin{pmatrix}
+              \vert & & \vert \\
+              u_1 & \dots & u_m \\
+              \vert & & \vert
+            \end{pmatrix}
+            \begin{pmatrix}
+              0 \\
+              0 \\
+              \vdots \\
+              \sigma_i \\
+              0 \\
+              \vdots \\
+              0
+            \end{pmatrix} \\
+          &= \begin{pmatrix}
+            \sigma_iu_{i1} \\
+            \sigma_iu_{i2} \\
+            \vdots \\
+            \sigma_iu{ii} \\
+            \vdots \\
+            \sigma_iu_{im}
+          \end{pmatrix} = \sigma_iu_i
+      \end{split}
+    \end{equation*}
+
+    Já para $A^Tu_i$, temos que
+    \begin{equation*}
+      \begin{split}
+      A^Tx &= V\Sigma^TU^T =
+        \begin{pmatrix}
+          \vert & & \vert \\
+          v_1 & \dots & v_n \\
+          \vert & & \vert
+        \end{pmatrix}
+        \begin{pmatrix}
+          \sigma_1 & & &  \\
+          &\sigma_2 & &  \\
+          & & \ddots &  \\
+          & & &\sigma_m \\
+          0 & \dots & 0 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \-- & u_1^T & \-- \\
+             & \vdots &  \\
+            \-- & u_m^T & \--
+        \end{pmatrix}
+        \begin{pmatrix}
+          x_1 \\
+          \vdots \\
+          x_m
+        \end{pmatrix} \\
+        &= \begin{pmatrix}
+            \vert & & \vert \\
+            v_1 & \dots & v_n \\
+            \vert & & \vert
+          \end{pmatrix}
+          \begin{pmatrix}
+          \sigma_1u_1^Tx \\
+          \vdots \\
+          \sigma_mu_m^Tx \\
+          0 \\
+          \vdots \\
+          0
+        \end{pmatrix}
+      \end{split}
+    \end{equation*}
+    Portanto, para $x=u_i$
+    \begin{equation*}
+      A^Tu_i = \sigma_i v_i.
+    \end{equation*}
+
+    Para calcular os valores de $\sigma_i$, $u_i$ e $v_i$,
+    \begin{equation*}
+      A^TAv_i = \sigma_iA^Tu_i = \sigma_i^2v_i.
+    \end{equation*}
+    Logo, $v_i$ é o autovetor de $A^TA$ associado ao autovalor $\sigma_i^2$ da matriz
+    $A^TA$. E
+    \begin{equation*}
+      AA^Tu_i = \sigma_iAv_i = \sigma_i^2u_i.
+    \end{equation*}
+    Logo, $u_i$ é o autovetor de $AA^T$ associado ao autovalor $\sigma_i^2$ da matriz
+    $AA^T$. Isto pode ser visto também através da demonstração do SVD pelo exercício 1.
+  \end{solution}
+
+
+  \begin{solution}{(Exercício 3)}
+
+    \begin{enumerate}
+      \item De fato, como $A = U\Sigma V^T$, e como $U$, $V^T$ são matrizes ortogonais,
+      temos que $\posto( U\Sigma V^T) = \posto(\Sigma)$. E como $\posto(\Sigma) = r$,
+      já que
+      \begin{equation*}
+        \Sigma =
+        \begin{pmatrix}
+          \sigma_1 &          &       &          & \\
+                   & \sigma_2 &       &          & \\
+                   &          & \ddots&          & \\
+                   &          &       & \sigma_r & \\
+                   &          &       &          & 0 & \\
+                   & & & & & \ddots& \\
+                   & & & & & & 0 \\
+                   & & & \vdots & & & \\
+                   0 & & & & & & 0
+        \end{pmatrix}
+      \end{equation*}
+      \begin{equation*}
+        \Rightarrow \posto(A) = \posto(\Sigma) = r.
+      \end{equation*}
+
+      \item Seja $x \in \mathbb{R}^n$, então
+        \begin{equation*}
+          x = b_1v_1 + \dots b_nv_n,
+        \end{equation*}
+        onde $v_1,\dots,v_n$ são os vetores singulares à direita da decomposição
+        SVD da matriz A. Então, pelo exercício 2
+        \begin{equation*}
+          \begin{split}
+            &Ax = A(b_1v_1 + \dots b_nv_n) = b_1\sigma_1u_1 + \dots b_r\sigma_ru_n \\
+            & \Rightarrow \im{A} \in \textnormal{span}\{u_1,\dots,u_r\}
+          \end{split}
+        \end{equation*}
+
+        Seja $x\in \textnormal{span}\{u_1,\dots,u_r\}$. Pelo exercício 2, $u_i =
+        \frac{1}{\sigma_i}Av_i$, portanto, $x \in \im{A}$.
+        \begin{equation*}
+          \im{A} = \textnormal{span}\{u_1,\dots,u_r\}.
+        \end{equation*}
+
+      \item Seja $x \in \Ker(A)$. Como $x\in \mathbb{R}^n$, $x = b_1v_1 + \dots b_nv_n$.
+        \begin{equation*}
+            A(b_1v_1 + \dots + b_nv_n) = 0 \Rightarrow b_1\sigma_1 u_1 + \dots + b_r\sigma_r u_r = 0
+        \end{equation*}
+
+        Como os vetores $u_1, \dots, u_m$ formam uma base para $\mathbb{R}^m$ e $\sigma_1,\dots,\sigma_r
+        \neq 0$, temos que
+        \begin{equation*}
+          b_1 = \dots = b_r.
+        \end{equation*}
+
+        Portanto, $x \in \spann{v_{r+1}, \dots, v_n}$. Do mesmo modo, temos que
+        $Av_i = \sigma_i u_i$. Se $i>r$, então $\sigma_i = 0$.
+        \begin{equation*}
+          Av_i = 0 \Rightarrow v_i \in \Ker(A) \Rightarrow \Ker(A) = \spann{v_{r+1}, \dots, v_n}.
+        \end{equation*}
+
+        \item De fato, note que pelos exercícios anteriores, se $m<n$, então
+          \begin{equation*}
+            \begin{split}
+              A = U\Sigma V^T &=
+              \begin{pmatrix}
+                  \vert & & \vert \\
+                  u_1 & \dots & u_m \\
+                  \vert & & \vert
+                \end{pmatrix}
+                \begin{pmatrix}
+                  \sigma_1 & & &  &0 \\
+                  &\sigma_2 & & & 0 \\
+                  & & \ddots & & 0 \\
+                  & & &\sigma_m & 0
+                \end{pmatrix}
+                \begin{pmatrix}
+                    \-- & v_1^T & \-- \\
+                     & \vdots &  \\
+                    \-- & v_n^T & \--
+                \end{pmatrix} \\
+                &= \begin{pmatrix}
+                    \vert & & \vert \\
+                    u_1 & \dots & u_m \\
+                    \vert & & \vert
+                  \end{pmatrix}
+                  \begin{pmatrix}
+                    \sigma_1v_1^Tx \\
+                    \vdots \\
+                    \sigma_mv_m^Tx
+                  \end{pmatrix} \\
+                &= \sum_{i=1}^{m}\sigma_iu_iv_i^T = \sum_{i=1}^{r}\sigma_iu_iv_i^T
+            \end{split}
+          \end{equation*}
+    \end{enumerate}
+  \end{solution}
+
+  \begin{solution}{(Exercício 4)}
+
+    \begin{enumerate}
+      \item Esta é a norma de Froebenius de uma matriz A, dada por
+        \begin{equation*}
+          \norm{A}_F^2 = tr(AA^T),
+        \end{equation*}
+        onde $tr$ é o operador traço. Além disso, se $U$ for uma matriz ortogonal, então
+        \begin{equation*}
+          \norm{UA}_F^2 = tr(UAA^TU^T) = tr(AA^TU^TU) = tr(AA^T) = \norm{A}_F^2.
+        \end{equation*}
+        Ainda mais, isto vale para multiplicação à direita, ou seja
+        \begin{equation*}
+          \norm{AU}_F^2 = tr(AUU^TA^T) = tr(AA^T) = \norm{A}_F^2.
+        \end{equation*}
+        Portanto,
+        \begin{equation*}
+          \norm{A}_F^2 = \norm{U\Sigma V^T}_F^2 = \norm{\Sigma}_F^2 = \sigma_1 + \dots + \sigma_p,
+        \end{equation*}
+        $p = \min\{m,n\}$.
+
+      \item Note que se $x$ é um vetor cuja norma é igual a um e $V$ é uma matriz ortogonal, então
+      $\norm{Vx} = \norm{x} = 1$. Portanto,
+      \begin{equation*}
+        \begin{split}
+          \norm{A}_2 &= \sup_{\norm{x} = 1}\norm{Ax} = \sup_{\norm{x} = 1} \norm{U\Sigma V^Tx} \\
+          &= \sup_{\norm{x} = 1} \norm{\Sigma V^Tx} = \sup_{\norm{V^Tx} = }\norm{\Sigma V^Tx}
+          = \sup_{\norm{y} = 1}\norm{\Sigma y} \\
+          &= \norm{\Sigma}_2
+        \end{split}
+      \end{equation*}
+
+      Suponha que $m<n$, então
+      \begin{equation*}
+        \Sigma = \begin{pmatrix}
+          \sigma_1 & & &  &0 \\
+          &\sigma_2 & & & 0 \\
+          & & \ddots & & 0 \\
+          & & &\sigma_m & 0
+        \end{pmatrix}
+      \end{equation*}
+
+      Logo,
+
+      \begin{equation*}
+        \norm{\Sigma}_2 = \sup_{\norm{x} = 1} \norm{\Sigma x} = \sup_{\norm{x} = 1}
+        \left|\sqrt{\sigma_1^2x_1^2 + \dots + \sigma_m^2x_m^2}\right| \leq \sup_{\norm{x} = 1} \sigma_1 \norm{x} = \sigma_1,
+      \end{equation*}
+      já que $\sigma_1 > 0$.
+      Agora seja $x = (1, 0, \dots, 0)\in \mathbb{R}^n$. Então, $\norm{x}_2 = 1$.
+      Portanto, $\norm{\Sigma x}_2 = \sigma_1$. Ou seja, $\norm{\Sigma}_2 \geq \sigma_1$.
+      \begin{equation*}
+        \norm{A}_2 = \norm{\Sigma}_F = \sigma_1.
+      \end{equation*}
+
+      de modo análogo temos que para $m \geq n$.
+
+      \item Seja $m\geq n$. Então,
+
+      \begin{equation*}
+        \Sigma = \begin{pmatrix}
+          \sigma_1 & & &\\
+          &\sigma_2 & & \\
+          & & \ddots &  \\
+          & & &\sigma_n \\
+          0 & 0 & \dots & 0
+        \end{pmatrix}
+      \end{equation*}
+
+      Assim,
+      \begin{equation*}
+        \begin{split}
+          \min_{x\neq 0} \frac{\norm{Ax}}{\norm{x}} &= \min_{x\neq 0}{\norm{\Sigma x}}{\norm{x}} \\
+          &= \min_{x\neq 0} \frac{\left|\sqrt{\sigma_1^2x_1^2 + \dots + \sigma_n^2x_n^2}\right|}{\norm{x}} \\
+          &\geq \sigma_n \min_{x\neq 0} \frac{\norm{x}}{\norm{x}} = \sigma_n.
+        \end{split}
+      \end{equation*}
+
+      Por outro lado, seja $x = (0, 0, \dots, 0, 1) \in \mathbb{R}^m$, então
+      \begin{equation*}
+        \min_{y\neq 0} \frac{\norm{Ay}_2}{\norm{y}_2} \leq \frac{\norm{\Sigma x}_2}{\norm{x}_2} = \sigma_n.
+      \end{equation*}
+
+      \begin{equation*}
+        \Rightarrow \min_{x\neq 0} \frac{\norm{Ax}_2}{\norm{x}_2} = \sigma_n.
+      \end{equation*}
+    \end{enumerate}
+  \end{solution}
+
+
+  \begin{solution}{(Exercício 5)}
+
+    Note que $\norm{A - A_k}_2 = \sigma_{k+1}$, pois
+    \begin{equation*}
+      \norm{A - A_k}_2 = \norm{\sum_{j=k+1}^{n}\sigma_ju_jv_J^T} = \sigma_{k+1}
+    \end{equation*}
+    pelo exercício 4-b. Portanto, resta mostrar que
+    \begin{equation*}
+        \min_{\posto(B) = k} \norm{A-B}_2 = \norm{A-A_k}.
+    \end{equation*}
+
+    Como $posto(A_k) = k$, já que $k<r$, temos que
+    \begin{equation*}
+      \min_{\posto(B) = k} \norm{A-B}_2 \leq \norm{A-A_k}.
+    \end{equation*}
+
+    Resta mostrar que
+    \begin{equation*}
+      \min_{\posto(B) = k} \norm{A-B}_2 \geq \norm{A-A_k}.
+    \end{equation*}
+
+    Seja $U\Sigma V^T$ a decomposição SVD da matriz A. Seja $B$ uma matriz de posto
+    igual a $k$. Como $k<r$, temos pelo teorema do núcleo e da imagem que
+    dim$(\Ker(B)) = n-k$. Além disso, restrinja a matriz V para $V_k$,
+    sendo $V_k$ a matriz das primeiras $k+1$  colunas
+    de V, portanto, $ dim(V_k) = k+1 $. Logo,
+    \begin{equation*}
+      dim(\Ker(B)) + dim(V_k) = n-k + k + 1 = n+1.
+    \end{equation*}
+
+    Como a soma das dimensões é maior que $n$ e ambos espaços estão contidos em
+    $\mathbb{R}^n$, temos que
+    \begin{equation*}
+      \Ker(B) \cap V_k \neq \emptyset.
+    \end{equation*}
+
+    Tome $x \in \Ker(B) \cap V_k$, tal que $\norm{x}_2 = 1$. Então
+
+    \begin{equation*}
+      \norm{A-B}_2 \geq \norm{Ax-Bx}_2 = \norm{A_{k+1}x}_2.
+    \end{equation*}
+
+    Como $x \in V_k$, $x = c_1v_1 + \dots + c_{k+1}v_{k+1}$, então
+
+    \begin{equation*}
+      \begin{split}
+        A_{k+1}x &= \sum_{i=1}^{k+1}\sigma_iu_iv_i^Tx = \sum_{i=1}^{k+1}\sigma_iu_iv_i^T
+      (c_1v_1 + \dots + c_{k+1}v_{k+1}) \\
+        &= \sum_{i=1}^{k+1}\sigma_ic_iu_i.
+      \end{split}
+    \end{equation*}
+
+    Utilizando o resultado acima, temos que
+    \begin{equation*}
+      \norm{A_{k+1}x}_2^2 = \norm{\sum_{i=1}^{k+1}\sigma_ic_iu_i}_2 \geq
+      \sigma_{k+1} \norm{\sum_{i=1}^{k+1}c_iu_i}_2.
+    \end{equation*}
+
+    E note que
+    \begin{equation*}
+      \begin{split}
+        1 = \norm{x}_2^2 = \left\langle \sum_i c_iv_i, \sum_j c_jv_j \right\rangle =
+        \sum_{i=1}^{k+1}c_i^2.
+      \end{split}
+    \end{equation*}
+
+    Mas como os vetores $u_1,\dots,u_{k+1}$ são ortonormais, temos que
+    \begin{equation*}
+      \norm{\sum_{i=1}^{k+1}c_iu_i}_2^2 = \left\langle \sum_i c_iu_i, \sum_j c_ju_j \right\rangle
+      = \sum_{i=1}^{k+1}c_i^2.
+    \end{equation*}
+
+    Portanto, juntando os resultados acima, temos que
+    \begin{equation*}
+      \norm{A-B}_2 \geq \sigma_{k+1}
+    \end{equation*}
+
+    Assim, obtemos o resultado desejado.
+    \begin{equation*}
+        \min_{\posto(B) = k} \norm{A-B}_2 = \norm{A - A_k}_2 = \sigma_{k+1}.
+    \end{equation*}
+  \end{solution}
+
+  \begin{solution}{(Exercício 6)}
+
+    Considere a SVD de $A\in \mathbb{R}^{m\times n}$ dada no Exercício 1. Portanto,
+    pelo exercício 4, queremos mostrar que
+    \begin{equation*}
+      \sigma_1 = \max_{\substack{y \in \mathbb{R}^m \\ x \in \mathbb{R}^n}}
+      \frac{y^TAx}{\norm{x}_2\norm{y}_2}.
+    \end{equation*}
+
+    Suponha que a matriz $A$ tenha posto maior ou igual a 1, então $\sigma_1 \neq 0$.
+
+    Agora, considere $x$ como o autovetor unitário associado a $\lambda_1$ da matriz $A^TA$.
+    Seja agora $y = Ax/\sigma_1$, onde $\sigma_1 = \sqrt{\lambda_1}$. Então
+    \begin{equation*}
+      \norm{y}_2^2 = y^Ty = \frac{1}{\sigma_1^2} x^TA^TAx = 1.
+    \end{equation*}
+
+    Logo,
+
+    \begin{equation*}
+      y^TAx = \frac{x^TA^TAx}{\sigma_1} = \sigma_1.
+    \end{equation*}
+
+    Acabamos de mostrar que
+    \begin{equation*}
+      \max_{\substack{y \in \mathbb{R}^m \\ x \in \mathbb{R}^n}}
+      \frac{y^TAx}{\norm{x}_2\norm{y}_2} \geq \sigma_1.
+    \end{equation*}
+
+    Vamos mostrar que vale a outra desigualdade agora. Seja $r = \posto(A)$,
+    então
+    \begin{equation*}
+      A = \sum_{i=1}^{r}\sigma_iu_iv_i^T.
+    \end{equation*}
+    Como os vetores $v_1, \dots, v_n$ formam uma base de $\mathbb{R}^{n}$ e $u_1, \dots, u_m$ de $\mathbb{R}^m$,
+    para todo $x \in \mathbb{R}^n$ e $y \in \mathbb{R}^m$,
+    \begin{equation*}
+      x = d_1 v_1 + \dots d_n v_v, \quad y = c_1 u_1 + \dots + c_m u_m.
+    \end{equation*}
+
+    Logo,
+    \begin{equation}\label{eq:eqdes}
+      \begin{split}
+        \dfrac{y^TAx}{\norm{y}_2\norm{x}_2} &= \dfrac{\left( \sum_{i=1}^{m} c_i u_i\right)^T
+        \left( \sum_{i=1}^{r} \sigma_iu_iv_i^T \right)
+        \left( \sum_{i=1}^{n} d_i v_i\right)}{\left( \sum_{i=1}^{m}c_i^2 \right)^{\frac{1}{2}}
+        \left(\sum_{i=1}^{n} d_i^2 \right)^{\frac{1}{2}} } \\
+        &= \dfrac{\left( \sum_{i=1}^{m} c_i u_i \right)^T
+        \left( \sum_{i=1}^{r} \sigma_i u_i d_i \right)}{\left( \sum_{i=1}^{m}c_i^2 \right)^{\frac{1}{2}}
+        \left(\sum_{i=1}^{n} d_i^2 \right)^{\frac{1}{2}} } \\
+        &= \dfrac{\sum_{i=1}^{r} \sigma_i c_i d_i}{\left( \sum_{i=1}^{m}c_i^2 \right)^{\frac{1}{2}}
+        \left(\sum_{i=1}^{n} d_i^2 \right)^{\frac{1}{2}} } \\
+        & \leq \sigma_1 \dfrac{\sum_{i=1}^{r} c_i d_i}{ \left( \sum_{i=1}^{m} c_i^2 \right)^{\frac{1}{2}}
+        \left(\sum_{i=1}^{n} d_i^2 \right)^{\frac{1}{2}} }
+      \end{split}
+    \end{equation}
+
+    Como $r \leq m,n$, considere os vetores
+    \begin{equation*}
+      c' = (c_1, \dots, c_r), \quad d' = (d_1, \dots, d_r).
+    \end{equation*}
+
+    Além disso, considere $c = (c_1, \dots, c_m)$ e $d = (d_1, \dots, d_n)$. Então
+    \begin{equation*}
+      \sum{i=1}^{r} c_i^2 \leq \sum_{i=1}^{m} c_i^2 \Rightarrow
+      \dfrac{1}{\left( \sum{i=1}^{r} c_i^2 \right)^\frac{1}{2}} \geq
+      \dfrac{1}{\left( \sum{i=1}^{m} c_i^2 \right)^\frac{1}{2}}.
+    \end{equation*}
+    De modo análogo para $d$ e $d'$
+    \begin{equation*}
+      \dfrac{1}{\left( \sum{i=1}^{r} d_i^2 \right)^\frac{1}{2}} \geq
+      \dfrac{1}{\left( \sum{i=1}^{n} d_i^2 \right)^\frac{1}{2}}.
+    \end{equation*}
+
+    E pela desigualdade de Cauchy-Schwarz, $|\langle c,d \rangle| \leq \norm{c}_2 \norm{d}_2$.
+    Portanto,
+    \begin{equation*}
+      \frac{|\langle c,d \rangle|}{\norm{c}_2 \norm{d}_2} \leq 1.
+    \end{equation*}
+
+    Substituindos os valores e desigualdades acima na Equação \eqref{eq:eqdes},
+    temos que
+    \begin{equation*}
+      \sigma_1 \dfrac{\sum_{i=1}^{r} c_i d_i}{ \left( \sum_{i=1}^{m} c_i^2 \right)^{\frac{1}{2}}
+      \left(\sum_{i=1}^{n} d_i^2 \right)^{\frac{1}{2}} } \leq
+      \sigma_1 \dfrac{\sum_{i=1}^{r} c_i d_i}{ \left( \sum_{i=1}^{r} c_i^2 \right)^{\frac{1}{2}}
+      \left(\sum_{i=1}^{r} d_i^2 \right)^{\frac{1}{2}} } \leq \sigma_1.
+    \end{equation*}
+
+    Como isto vale para qualqer $x$ e $y$,
+    \begin{equation*}
+      \sigma_1 = \sigma_{\max}(A) = \max_{\substack{y \in \mathbb{R}^m \\ x \in \mathbb{R}^n}}
+      \frac{y^TAx}{\norm{x}_2\norm{y}_2}.
+    \end{equation*}
+  \end{solution}
+
+  \begin{solution}{(Exercício 7)}
+
+    Vamos usar SVD para provar. Seja $A \in \mathbb{R}^{m\times n}$ uma matriz
+    qualquer, e considere a SVD de $A$ dada no exercício 1. Suponha que
+    $posto(A) = r$, sendo que $r \leq \min{m,n}$. Suponha que $n \leq m$, a
+    demonstração a seguir pode ser usada analogamente para o caso $n > m$.
+
+    Temos
+    \begin{equation*}
+      A = \sum_{i=1}^{r}\sigma_i u_iv_i^T.
+    \end{equation*}
+
+    Seja agora a sequência de matrizes $B_k$, onde
+    \begin{equation*}
+      B_k = \sum_{i=1}^{n} \left(\sigma_i + \frac{1}{k}\right)u_iv_i^T.
+    \end{equation*}
+
+    Observe que as matrizes $B_k$ tem posto completo, já que
+    $B_k = U\Sigma_kV^T$, onde $U,V$ são matrizes ortogonais e $\Sigma_k$ possui
+    posto cheio, já que as colunas de $\Sigma_k$ são linearmente independentes.
+
+    \begin{equation*}
+      \Sigma_k =
+      \begin{pmatrix}
+        \sigma_1 + \frac{1}{k} & 0 & \cdots & 0 \\
+        0 & \sigma_2 + \frac{1}{k} & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & \sigma_n + \frac{1}{k} \\
+        0 & 0 & \cdots & 0 \\
+        0 & 0 & \cdots & 0
+      \end{pmatrix}.
+    \end{equation*}
+
+    Além disso, note que $A - B_k = U(\Sigma - \Sigma_k)V^T$, e portanto,
+    \begin{equation*}
+      \norm{A-B_k}_2 = \norm{U(\Sigma - \Sigma_k)V^T}_2 = \norm{\Sigma - \Sigma_k},
+    \end{equation*}
+
+    já que $U$ e $V$ são matrizes ortogonais. Além disso, note que
+    \begin{equation*}
+      \Sigma - \Sigma_k =
+      \begin{pmatrix}
+        \sigma_1 & 0 & \cdots & 0 \\
+        0 & \sigma_2 & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & \sigma_n \\
+        0 & 0 & \cdots & 0 \\
+        0 & 0 & \cdots & 0
+      \end{pmatrix}
+      -
+      \begin{pmatrix}
+        \sigma_1 + \frac{1}{k} & 0 & \cdots & 0 \\
+        0 & \sigma_2 + \frac{1}{k} & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & \sigma_n + \frac{1}{k} \\
+        0 & 0 & \cdots & 0 \\
+        0 & 0 & \cdots & 0
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        \frac{1}{k} & 0 & \cdots & 0 \\
+        0 & \frac{1}{k} & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & \frac{1}{k} \\
+        0 & 0 & \cdots & 0 \\
+        0 & 0 & \cdots & 0
+      \end{pmatrix}.
+    \end{equation*}
+
+    Sabemos que o valor singular $\sigma_1$ de uma matrix $A$ é a raíz quadrada
+    do maior autovalor da matriz $A^TA$. Neste caso, o valor singular $\sigma_1$ da
+    matriz $\Sigma - \Sigma_k$ é $\frac{1}{k}$ já que o maior autovalor da
+    matriz $(\Sigma - \Sigma_k)^T(\Sigma - \Sigma_k)$ é $\frac{1}{k^2}$.
+    Pelo exercício 4-b, temos que
+    \begin{equation*}
+      \norm{\Sigma - \Sigma_k}_2 = \sigma_1.
+    \end{equation*}
+    Portanto,
+    \begin{equation*}
+      \norm{A - B_k}_2 = \norm{\Sigma - \Sigma_k}_2 = \sigma_1 = \frac{1}{k}.
+    \end{equation*}
+
+    Ou seja, para todo $\epsilon > 0$, existe $k_0$ tal que para todo $k > k_0$,
+
+    \begin{equation*}
+      \norm{A - B_k}_2 < \epsilon.
+    \end{equation*}
+
+    Assim, mostramos que qualquer matriz em $\mathbb{R}^{m\times n}$ é o limite de uma
+    sequência de matrizes de posto completo.
+  \end{solution}
+
+  \begin{solution}{(Exercício 8)}
+
+    Seja $\Omega = \{x_1,\dots,x_m\}\subset \mathbb{R}^n$ um conjunto de dados e
+    $k\in(1,m)$ um número natural. O Algoritmo de Lloyd ($k$-médias) para clusterização
+    consiste em achar centros, ou pontos, de modo que o conjunto de treinamento
+    possa ser separado em $k$ partições, todas disjuntas.
+    Ou seja, o objetivo é encontrar uma partição ótima
+    \begin{equation*}
+      S = \{S_1, \dots, S_m\}
+    \end{equation*}
+    de $\Omega$, isto é,  encontrar $S_i$, chamados de \emph{clusters}, tais que
+    \begin{equation*}
+      \begin{split}
+        & S_i \cap S_j = \emptyset, \quad i\neq j \\
+        & \bigcup_{i=1}^k S_i = \Omega.
+      \end{split}
+    \end{equation*}
+
+    Em termos de minimização, queremos resolver o seguinte problema de minização.
+
+    \begin{equation*}
+      \min_{\substack{S \textnormal{ partição} \\ \textnormal{de } \Omega}}
+      \sum_{i=1}^{k} \sum_{x_j \in S_i} \norm{x_j - \mu_i}_2^2,
+      \quad \textnormal{onde }
+      \mu_i = \frac{1}{|S_i|} \sum_{x_j \in S_i} x_j.
+    \end{equation*}
+
+    Então, o Algoritmo de Lloyd é dado a seguir.
+
+    \begin{algorithm}[htb]
+        \caption{Algoritmo de Lloyd}
+        \begin{algorithmic}[1]
+            \State Escolha $k$ pontos $m_1^{(1)}, \dots, m_k^{(1)}$ em $\Omega$, os quais
+                    serão usados como "médias iniciais". Defina $t=1$.
+
+            \State Para cada $j = 1, \dots, m$, encontre
+                  \begin{equation*}
+                      i \in  \underset{l=1,\dots,k}{\argmin} \norm{x_j - m_l^{(t)}}
+                  \end{equation*}
+                  e associe $x_j$ ao cluster $S_i$.
+            \State Se $t>1$ e $S^{t} = S^{t-1}$, pare.
+            \State (Atualização das médias) Para cada $i=1,\dots,k$, defina
+                  \begin{equation*}
+                    m_i^{t+1} = \frac{1}{|S_i|} \sum_{x_j \in S_i^{(t)}} x_j
+                  \end{equation*}
+            \State Defina $t=t+1$ e volte para o passo $2$.
+        \end{algorithmic}
+    \end{algorithm}
+
+  \end{solution}
+
+  \begin{solution}{(Exercício 9)}
+
+    Seja um banco de dados $\{I_1, \dots, I_m\}$, onde cada $I_i$ é uma
+    matriz de imagens em escala cinza. Temos $m$ imagens, de tamanho
+    $n\times n$, dividas em $p$ classes, onde cada classe representa a face de uma pessoa.
+    Para cada matriz $I_j$, denote por $\Phi_j$ o vetor de concatenação
+    das matrizes. Seja $A$ a matriz abaixo.
+
+    \begin{equation*}
+      A =
+      \begin{pmatrix}
+        \vert  & \vert  &        & \vert  \\
+        \Phi_1 & \Phi_2 & \cdots & \Phi_m \\
+        \vert  & \vert  &        & \vert  \\
+      \end{pmatrix}
+      \in \mathbb{R}^{n^2 \times m}.
+    \end{equation*}
+
+    Para classificar uma nova imagem $I_{new} = \Phi_{new}$, calculamos a
+    projeção ortogonal no espaço gerado pelas colunas da matriz $A$, assim
+    podemos dizer de qual vetor coluna da matriz $A$, a imagem $\Phi_{new}$
+    está mais perto, e esta será a sua classe.
+    Portanto, o procedimento é dado no Algoritmo abaixo.
+
+    \begin{algorithm}[htb]
+        \caption{Auto-faces para reconhecimendo facial}
+        \begin{algorithmic}[1]
+            \State Calcule a projeção ortogonal $\hat{\Phi}_{new}$ de $\Phi_{new}$
+                    sobre o subespaço gerado por $\Phi_1, \dots, \Phi_m$.
+                    \begin{equation*}
+                      \hat{\Phi}_{new} = A(A^TA)^{-1}\Phi_{new}
+                    \end{equation*}
+            \State Calcule
+                    \begin{equation*}
+                      j = \underset{i=1,\dots,m}{\argmin} \norm{\hat{\Phi}_{new} -
+                      \Phi_i}
+                    \end{equation*}
+            \State Dizemos então que a face em $I_{new}$ é a face da pessoa em
+            $I_j$.
+        \end{algorithmic}
+    \end{algorithm}
+
+  \end{solution}
+
+\end{document}
