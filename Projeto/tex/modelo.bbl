@@ -1,0 +1,51 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Abadi et~al.}{2015}]{tensorflow2015}
+Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
+  G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
+  A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M.,
+  Levenberg, J., Man\'{e}, D., Monga, R., Moore, S., Murray, D., Olah, C.,
+  Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P.,
+  Vanhoucke, V., Vasudevan, V., Vi\'{e}gas, F., Vinyals, O., Warden, P.,
+  Wattenberg, M., Wicke, M., Yu, Y., \& Zheng, X. (2015).
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+
+\bibitem[\protect\astroncite{Goodfellow et~al.}{2014}]{gan}
+Goodfellow, I.~J., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D.,
+  Ozair, S., Courville, A., \& Bengio, Y. (2014).
+\newblock Generative adversarial networks.
+
+\bibitem[\protect\astroncite{Kingma and Ba}{2014}]{adam}
+Kingma, D.~P. \& Ba, J. (2014).
+\newblock Adam: A method for stochastic optimization.
+
+\bibitem[\protect\astroncite{Krizhevsky et~al.}{2012}]{ImageNet}
+Krizhevsky, A., Sutskever, I., \& Hinton, G.~E. (2012).
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In: {\em Advances in Neural Information Processing Systems 25}, F.
+  Pereira, C.~J.~C. Burges, L. Bottou, \& K.~Q. Weinberger, ed., pages
+  1097--1105. Curran Associates, Inc.
+
+\bibitem[\protect\astroncite{Litjens et~al.}{2016}]{Litjens}
+Litjens, G., S{\'{a}}nchez, C.~I., Timofeeva, N., Hermsen, M., Nagtegaal, I.,
+  Kovacs, I., van~de Kaa, C.~H., Bult, P., van Ginneken, B., \& van~der Laak,
+  J. (2016).
+\newblock Deep learning as a tool for increased accuracy and efficiency of
+  histopathological diagnosis.
+\newblock {\em Scientific Reports}.
+
+\bibitem[\protect\astroncite{Simonyan and Zisserman}{2014}]{vgg16}
+Simonyan, K. \& Zisserman, A. (2014).
+\newblock Very deep convolutional networks for large-scale image recognition.
+
+\bibitem[\protect\astroncite{Szegedy et~al.}{2014}]{inception}
+Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D.,
+  Vanhoucke, V., \& Rabinovich, A. (2014).
+\newblock Going deeper with convolutions.
+
+\bibitem[\protect\astroncite{Zhou et~al.}{2014}]{places}
+Zhou, B., Lapedriza, A., Xiao, J., Torralba, A., \& Oliva, A. (2014).
+\newblock Learning deep features for scene recognition using places database.
+\newblock {\em Advances in Neural Information Processing Systems 27 (NIPS)}.
+
+\end{thebibliography}
