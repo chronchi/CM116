@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex modelo"] 1497715261 "modelo.aux" "modelo.bbl" "modelo" 1497715321
+["bibtex modelo"] 1497715946 "modelo.aux" "modelo.bbl" "modelo" 1497715959
   "./bibstylenew.bst" 1497548882 24278 b1b80ab5ac74ead762ab7e7c69bc256d ""
-  "modelo.aux" 1497715320 1871 61da2acbde2cee21ec7306b0ec0693d0 ""
+  "modelo.aux" 1497715959 1978 d0c6a8f1fe9ca80aa7ac4a3cbb62099f ""
   "modelo.bcf" 0 -1 0 ""
   "ref.bib" 1497709614 3707 bcb87c6680228a853b2583f20fa7a23f ""
   (generated)
-  "modelo.bbl"
   "modelo.blg"
-["pdflatex"] 1497715319 "modelo.tex" "/home/carlos/Desktop/CM116/Projeto/tex/modelo.pdf" "modelo" 1497715321
+  "modelo.bbl"
+["pdflatex"] 1497715958 "modelo.tex" "/home/carlos/Desktop/CM116/Projeto/tex/modelo.pdf" "modelo" 1497715959
   "/etc/texmf/web2c/texmf.cnf" 1494036212 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/carlos/Desktop/CM116/Projeto/tex/modelo.aux" 1497715320 1871 61da2acbde2cee21ec7306b0ec0693d0 ""
+  "/home/carlos/Desktop/CM116/Projeto/tex/modelo.aux" 1497715959 1978 d0c6a8f1fe9ca80aa7ac4a3cbb62099f ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc" 1177804218 3341 78e600b269762aa2a25a5293cc4535c0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc" 1177804218 3275 8d7166dfdbc31ffdc8aba0c31b3bd5c8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc" 1177804218 3375 808c88761dbdc66fc653d18f42765b64 ""
@@ -153,14 +153,14 @@
   "141.jpg" 1493340370 321941 54afd2cb242b98b8d123472e6379648f ""
   "errors.png" 1497564844 175640 be8ef9027423230f28b00c1dbac373a2 ""
   "icml2013.sty" 1497557975 20578 3826807c7c013cd512a4d43ee61b5894 ""
-  "modelo.aux" 1497715320 1871 61da2acbde2cee21ec7306b0ec0693d0 ""
-  "modelo.bbl" 1497715261 2539 8830663d8803b2a2e38732d57682f377 "bibtex modelo"
-  "modelo.out" 1497715320 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "modelo.tex" 1497715319 16756 45028e5d2e63c5cc2ab9fa22897ffe7d ""
+  "modelo.aux" 1497715959 1978 d0c6a8f1fe9ca80aa7ac4a3cbb62099f ""
+  "modelo.bbl" 1497715946 2539 8830663d8803b2a2e38732d57682f377 "bibtex modelo"
+  "modelo.out" 1497715958 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "modelo.tex" 1497715958 16873 0320511d5196bc18ab04d33eb90cfb4d ""
   (generated)
+  "modelo.aux"
   "/home/carlos/Desktop/CM116/Projeto/tex/modelo.pdf"
   "modelo.log"
-  "/home/carlos/Desktop/CM116/Projeto/tex/modelo.log"
   "modelo.out"
   "modelo.pdf"
-  "modelo.aux"
+  "/home/carlos/Desktop/CM116/Projeto/tex/modelo.log"
